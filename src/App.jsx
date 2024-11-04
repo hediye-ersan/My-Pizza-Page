@@ -13,6 +13,7 @@ const malzemeList = [
 const initialForm = {
   name: "",
   boyutlar: "Kucuk",
+  hamurKalinligi:"",
   malzemeler: [],
   siparisNotu: "",
   terms1: false,
@@ -93,8 +94,9 @@ function App() {
                 checked={form.boyut === "Kucuk"}
               />
               Küçük
-            </Label>
+            </Label>            
           </FormGroup>
+          
           <FormGroup check>
             <Label check>
               <Input
@@ -121,7 +123,22 @@ function App() {
           </FormGroup>
         </FormGroup>
         <FormGroup>
-          <Label>Malzeme Seçin</Label>
+          <Label for="hamur">Hamur Seç</Label>
+          <Input 
+            type="select" 
+            name="hamurKalinligi" 
+            id="hamur" 
+            value={form.hamurKalinligi} 
+            onChange={handleChange}
+          >
+            <option value="">Hamur Kalınlığı</option>
+            <option value="Ince">İnce</option>
+            <option value="Orta">Orta</option>
+            <option value="Kalın">Kalın</option>
+          </Input>
+        </FormGroup>
+        <FormGroup>
+          <Label>Ek Malzemeler</Label>
           {malzemeList.map((malzeme) => (
             <FormGroup check key={malzeme}>
               <Label check>
@@ -136,6 +153,17 @@ function App() {
               </Label>
             </FormGroup>
           ))}
+        </FormGroup>
+        <FormGroup>
+          <Label for="not">Sipariş Notu</Label>
+          <Input
+            id="not"
+            name="not"
+            placeholder="Siparişine eklemek istediğin bir not var mı?"
+            type="text"
+            onChange={handleChange}
+            value={form.siparisNotu}
+          />
         </FormGroup>
       </form>
     </>
