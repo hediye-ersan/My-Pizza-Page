@@ -6,7 +6,7 @@ import { Form, FormGroup, Label, Input, Button, Col, Row } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const malzemeList = [
-  "Pepperoni", "Sosis", "KanadaJambonu", "TavukIzgara", "Soğan", "Domates", "Misir", "Sucuk", "Jalepeno", "Sarımsak", "Biber", "Sucuk", "Ananas", "Kabak"
+  "Pepperoni", "Sosis", "KanadaJambonu", "TavukIzgara", "Soğan", "Domates", "Misir", "Sucuk", "Jalepeno", "Sarımsak", "Biber", "Ananas", "Kabak"
 ]
 
 
@@ -47,13 +47,16 @@ function App() {
     setForm(initialForm); // Formu sıfırla
   };
 
+  const fiyat = 85.50;
+  const secimler = form.malzemeler.length * 5;
+  const toplam =fiyat.toFixed(2); // Toplamı formatla
 
 
   return (
     <>
 
-      <div><h1>Teknolojik Yemekler</h1>
-        <div className='head'>
+      <div className='head'><h1>Teknolojik Yemekler</h1>
+        <div>
           <h3>Anasayfa</h3>
           <h3>Seçenekler</h3>
           <h3>Sipariş Oluştur</h3>
@@ -161,16 +164,23 @@ function App() {
           ))}
         </FormGroup>
         <FormGroup>
-          <Label for="not">Sipariş Notu</Label>
+          <Label for="siparisNotu">Sipariş Notu</Label>
           <Input
-            id="not"
-            name="not"
+            id="siparisNotu"
+            name="siparisNotu"
             placeholder="Siparişine eklemek istediğin bir not var mı?"
             type="text"
             onChange={handleChange}
             value={form.siparisNotu}
           />
         </FormGroup>
+        
+        <div>
+          <p>Sipariş Toplamı</p>
+          <p>Seçimler: {secimler}₺</p>
+          <p>Toplam: {toplam}₺</p>
+        </div>
+        
       </form>
     </>
   )
