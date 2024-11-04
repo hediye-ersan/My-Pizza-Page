@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import workintech from '/workintech.svg'
 import './App.css'
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Col, Row } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const malzemeList = [
@@ -82,6 +82,8 @@ function App() {
             value={form.name}
           />
         </FormGroup>
+        <Row>
+          <Col>
         <FormGroup>
           <Label>Boyut Seç</Label>
           <FormGroup check>
@@ -122,6 +124,8 @@ function App() {
             </Label>
           </FormGroup>
         </FormGroup>
+        </Col>
+        <Col md={6}>
         <FormGroup>
           <Label for="hamur">Hamur Seç</Label>
           <Input 
@@ -137,6 +141,8 @@ function App() {
             <option value="Kalın">Kalın</option>
           </Input>
         </FormGroup>
+        </Col>
+        </Row>
         <FormGroup>
           <Label>Ek Malzemeler</Label>
           {malzemeList.map((malzeme) => (
