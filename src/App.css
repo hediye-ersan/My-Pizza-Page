@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+:root {
+  --yellow:#FDC913;
+  --light-grey:#5F5F5F;
+  --dark-grey:#292929;
+  --red:#CE2829;
+  --beige:#FAF7F2;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
