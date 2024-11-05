@@ -1,4 +1,40 @@
+*{
+margin: 1px, solid, lime;
+}
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.form-space{
+  margin-bottom: 15px;
+}
+.header{
+  background-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+  gap: 20px;
+  
+  
+  
+}
+.form {
+  margin: 0, auto;
+  max-width: 600px;
+  
+  
+}
+.gap {
+  display: flex;
+  gap: 20px;
+  
+}
+.right{
+  text-align: start;
+}
 
 #root {
   max-width: 1280px;
