@@ -22,21 +22,31 @@ const initialForm = {
 
 function App() {
   const [form, setForm] = useState(initialForm);
-  const [error, setError] = useState("")
+  const [formErrors, setFormErrors] = useState({});
+
   
   useEffect(() => {
+    const errors = {};
+
     if (form.name.length < 3 && form.name.length > 0) {
-      setError("İsim en az 3 karakter olmalı.");
-    } else {
-      setError("");
+      errors.name = "İsim en az 3 karakter olmalı.";
     }
-  }, [form.name]);
+
+    if (form.malzemeler.length < 4) {
+      errors.malzemeler = "En az 4 malzeme seçmelisiniz.";
+    }
+
+    if (form.malzemeler.length > 10) {
+      errors.malzemeler = "En fazla 10 malzeme seçebilirsiniz.";
+    }
+
+    setFormErrors(errors); // Hata mesajlarını güncelle
+  }, [form]);
 
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
 
-    
 
     if (type === 'checkbox') {
       setForm((prevForm) => {
@@ -56,12 +66,18 @@ function App() {
 
     if (!form.name || form.name.length < 3) {
       setError("İsim en az 3 karakter olmalı.");
-      return; // Hata varsa form gönderilmesin
-    }    
+      return;
+    }
+
+    if (form.malzemeler.length < 4 || form.malzemeler.length > 10) {
+      setError("En fazla 10 ve en az 4 malzeme seçebilirsiniz.");
+      return;
+    }
+    
 
     console.log(form);
     setForm(initialForm);// Formu sıfırla
-    setError("") 
+    setError("")
   };
 
   const fiyat = 85.50;
@@ -103,7 +119,7 @@ function App() {
               onChange={handleChange}
               value={form.name}
             />
-            {error && <p style={{color:'red'}}>{error}</p>}
+            {formErrors.name && <p style={{ color: 'red' }}>{formErrors.name}</p>}
           </div>
 
           <div className='form-row'>
@@ -155,7 +171,7 @@ function App() {
                 defaultValue={"-1"}
                 onChange={handleChange}
               >
-                <option value="-1" disabled={true}>Hamur Kalınlığı</option>
+                <option value="-1" disabled>Hamur Kalınlığı</option>
                 <option value="Ince">İnce</option>
                 <option value="Orta">Orta</option>
                 <option value="Kalın">Kalın</option>
@@ -164,6 +180,9 @@ function App() {
           </div>
           <div>
             <Label htmlFor='malzemeler'>Ek Malzemeler</Label>
+            {formErrors.malzemeler && (
+              <p style={{ color: 'grey'}}>{formErrors.malzemeler}</p>
+            )}
             {malzemeList.map((malzeme) => (
               <div key={malzeme}>
                 <Label check>
@@ -174,11 +193,15 @@ function App() {
                     value={malzeme}
                     onChange={handleChange}
                     checked={form.malzemeler.includes(malzeme)}
+                    disabled={form.malzemeler.length >= 10 && !form.malzemeler.includes(malzeme)}
+
                   />
                   {malzeme}
+
                 </Label>
               </div>
             ))}
+            
           </div>
           <div>
             <Label for="siparisNotu">Sipariş Notu</Label>
@@ -199,7 +222,7 @@ function App() {
           </div>
           <div>
             <Button type='button'>Ekleme Çıkarma</Button>
-            <Button type='submit' disabled={form.name.length<3}>Sipariş Ver</Button>
+            <Button type='submit' disabled={form.name.length < 3 || !form.boyut|| form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
           </div>
 
