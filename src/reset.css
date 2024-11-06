@@ -13,9 +13,10 @@
 .header {
     background-color: var(--red);
     color: white;
-    
+
 
 }
+
 h1 {
     text-align: center;
     padding: 2rem;
@@ -25,18 +26,22 @@ h1 {
     display: flex;
     gap: 1rem;
     padding-bottom: 1rem;
-    
-    
-    
+
+
+
 }
 
 .form {
     margin: 0 auto;
     max-width: 550px;
-    
+
 }
+
 .form-row {
     display: flex;
     justify-content: space-between;
 
+}
+.justify {
+    text-align:justify;
 }
