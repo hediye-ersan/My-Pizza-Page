@@ -12,7 +12,7 @@ const malzemeList = [
 
 const initialForm = {
   name: "",
-  boyutlar: "Kucuk",
+  boyut: "",
   hamurKalinligi: "",
   malzemeler: [],
   siparisNotu: "",
@@ -24,7 +24,7 @@ function App() {
   const [form, setForm] = useState(initialForm);
   const [formErrors, setFormErrors] = useState({});
 
-  
+
   useEffect(() => {
     const errors = {};
 
@@ -65,19 +65,19 @@ function App() {
     event.preventDefault();
 
     if (!form.name || form.name.length < 3) {
-      setError("İsim en az 3 karakter olmalı.");
+      setFormErrors("İsim en az 3 karakter olmalı.");
       return;
     }
 
     if (form.malzemeler.length < 4 || form.malzemeler.length > 10) {
-      setError("En fazla 10 ve en az 4 malzeme seçebilirsiniz.");
+      setFormErrors("En fazla 10 ve en az 4 malzeme seçebilirsiniz.");
       return;
     }
-    
+
 
     console.log(form);
     setForm(initialForm);// Formu sıfırla
-    setError("")
+    setFormErrors("")
   };
 
   const fiyat = 85.50;
@@ -168,7 +168,6 @@ function App() {
                 name="hamurKalinligi"
                 id="hamur"
                 value={form.hamurKalinligi}
-                defaultValue={"-1"}
                 onChange={handleChange}
               >
                 <option value="-1" disabled>Hamur Kalınlığı</option>
@@ -181,7 +180,7 @@ function App() {
           <div>
             <Label htmlFor='malzemeler'>Ek Malzemeler</Label>
             {formErrors.malzemeler && (
-              <p style={{ color: 'grey'}}>{formErrors.malzemeler}</p>
+              <p style={{ color: 'grey' }}>{formErrors.malzemeler}</p>
             )}
             {malzemeList.map((malzeme) => (
               <div key={malzeme}>
@@ -201,7 +200,7 @@ function App() {
                 </Label>
               </div>
             ))}
-            
+
           </div>
           <div>
             <Label for="siparisNotu">Sipariş Notu</Label>
@@ -209,7 +208,7 @@ function App() {
               id="siparisNotu"
               name="siparisNotu"
               placeholder="Siparişine eklemek istediğin bir not var mı?"
-              type="text"
+              type="textarea"
               onChange={handleChange}
               value={form.siparisNotu}
             />
@@ -222,7 +221,7 @@ function App() {
           </div>
           <div>
             <Button type='button'>Ekleme Çıkarma</Button>
-            <Button type='submit' disabled={form.name.length < 3 || !form.boyut|| form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
+            <Button type='submit' disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
           </div>
 
