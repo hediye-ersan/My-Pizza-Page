@@ -1,7 +1,7 @@
-*{
+/**{
     border: 1px, solid, purple;
 }
-
+*/
 :root {
     --yellow: #FDC913;
     --light-grey: #5F5F5F;
@@ -20,15 +20,15 @@
 h1 {
     text-align: center;
     padding: 2rem;
+    font-family: "Quattrocento", serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .gap {
     display: flex;
     gap: 1rem;
     padding-bottom: 1rem;
-
-
-
 }
 
 .form {
@@ -37,11 +37,74 @@ h1 {
 
 }
 
+.form-space {
+    margin: 2rem 0rem;
+}
+
 .form-row {
     display: flex;
     justify-content: space-between;
 
 }
+
 .justify {
-    text-align:justify;
+    text-align: justify;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.malzeme-container {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: start;
+    margin: 2rem 0rem;
+
+}
+
+.malzeme-container p {
+    grid-column: span 2;
+    /* Uyarı mesajı her iki sütunu kapsayacak şekilde genişlesin */
+    color: var(--red);
+    font-size: rem;
+    /* Daha küçük yazı tipi */
+    margin-top: 0.5rem;
+    /* Başlık ile arasına boşluk */
+    min-height: 20px;
+}
+
+label {
+
+    font-family: "Barlow", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.barlow {
+    font-family: "Barlow", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.buttons {
+    background-color: var(--yellow);
+    color: black;
+}
+
+.buttons:disabled {
+    background-color: #FDC913;
+    color: black;
+}
+
+.siparis-toplam {
+    padding: 1.5rem 1.5rem;
+    border: 3px solid var(--light-grey);
+    margin: 1.5rem 5rem;
+    text-align: center;
+    border-radius: 1rem;
+
 }

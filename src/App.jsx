@@ -4,21 +4,19 @@ import workintech from '/workintech.svg'
 import './App.css'
 import { Form, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyForm from './components/MyForm';
 import { Router, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+//Bileşenlerim
+
+import OrderPizza from './components/OrderPizza';
+
+
 
 
 function App() {
 
   return (
     <>
-      <Router>
-        <Switch>
-        <Route exact path="/" component={Acıktım} />
-        <Route path="/my-form" component={MyForm} />
-        <Route path="/success" component={Succes} />
-        </Switch>
-      </Router>
+      
 
 
 
@@ -41,7 +39,7 @@ function App() {
           <p className='justify'>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
 
         </div>
-        <MyForm />
+        <OrderPizza/>
       </div>
     </>
   )
