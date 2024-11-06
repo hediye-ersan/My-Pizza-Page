@@ -5,12 +5,23 @@ import './App.css'
 import { Form, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyForm from './components/MyForm';
+import { Router, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function App() {
 
   return (
     <>
+      <Router>
+        <Switch>
+        <Route exact path="/" component={Acıktım} />
+        <Route path="/my-form" component={MyForm} />
+        <Route path="/success" component={Succes} />
+        </Switch>
+      </Router>
+
+
+
       <div className='header'>
         <h1>Teknolojik Yemekler</h1>
         <div className='form gap'>
