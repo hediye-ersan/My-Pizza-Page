@@ -20,7 +20,7 @@ const initialForm = {
     terms2: false
 };
 
-function MyForm() {
+function OrderPizza() {
     const [form, setForm] = useState(initialForm);
     const [formErrors, setFormErrors] = useState({});
     const [toplam, setToplam] = useState(0)
@@ -94,7 +94,7 @@ function MyForm() {
 
             <Form onSubmit={handleSubmit}>
 
-                <div>
+                <div className='form-space'>
                     <Label htmlFor="name">Ad-Soyad</Label>
                     <Input
                         id="name"
@@ -107,10 +107,10 @@ function MyForm() {
                     {formErrors.name && <p style={{ color: 'red' }}>{formErrors.name}</p>}
                 </div>
 
-                <div className='form-row'>
+                <div className='form-row form-space'>
                     <div>
                         <Label>Boyut Seç</Label>
-                        <div>
+                        <div className='column'>
                             {boyutlar.map((boyut) => (
                                 <Label key={boyut}>
                                     <input
@@ -142,14 +142,13 @@ function MyForm() {
                         </Input>
                     </div>
                 </div>
-                <div>
+                <div className='malzeme-container form-space'>
                     <Label htmlFor='malzemeler'>Ek Malzemeler</Label>
                     {formErrors.malzemeler && (
-                        <p style={{ color: 'grey' }}>{formErrors.malzemeler}</p>
-                    )}
+                        <p>{formErrors.malzemeler}</p>)}
                     {malzemeList.map((malzeme) => (
                         <div key={malzeme}>
-                            <Label check>
+                            <Label check style={{ margin: '0.5rem 0rem' }}>
                                 <Input
                                     id='malzemeler'
                                     type="checkbox"
@@ -168,7 +167,7 @@ function MyForm() {
 
                 </div>
                 <div>
-                    <Label for="siparisNotu">Sipariş Notu</Label>
+                    <Label htmlFor="siparisNotu">Sipariş Notu</Label>
                     <Input
                         id="siparisNotu"
                         name="siparisNotu"
@@ -179,14 +178,14 @@ function MyForm() {
                     />
                 </div>
 
-                <div>
+                <div className='barlow siparis-toplam'>
                     <p>Sipariş Toplamı</p>
                     <p>Seçimler: {(form.malzemeler.length * 5).toFixed(2)}₺</p>
-                    <p>Toplam: {toplam}₺</p>
+                    <p style={{ color: 'red' }}>Toplam: {toplam}₺</p>
                 </div>
-                <div>
-                    <Button type='button'>Ekleme Çıkarma</Button>
-                    <Button type='submit' disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
+                <div className='form-row'>
+                    <Button type='button'className='buttons'>Ekleme Çıkarma</Button>
+                    <Button className='buttons' type='submit' disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
                 </div>
 
@@ -196,4 +195,4 @@ function MyForm() {
     )
 }
 
-export default MyForm;
+export default OrderPizza;
