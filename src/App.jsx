@@ -6,7 +6,6 @@ import { Form, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Router, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 //Bileşenlerim
-
 import OrderPizza from './components/OrderPizza';
 
 
@@ -17,9 +16,6 @@ function App() {
   return (
     <>
       
-
-
-
       <div className='header'>
         <h1>Teknolojik Yemekler</h1>
         <div className='form gap'>

@@ -24,13 +24,26 @@ function OrderPizza() {
     const [form, setForm] = useState(initialForm);
     const [formErrors, setFormErrors] = useState({});
     const [toplam, setToplam] = useState(0)
+    const [quantity, setQuantity] = useState(1);
 
+    const handleIncrement = () => {
+        setQuantity(prevQuantity => prevQuantity + 1);
+      };
+    
+      const handleDecrement = () => {
+        if (quantity > 1) {
+          setQuantity(prevQuantity => prevQuantity - 1);
+        }
+      };
+
+      
     useEffect(() => {
         const fiyat = 85.50;
         const secimler = form.malzemeler.length * 5;
-        const total = (fiyat + secimler).toFixed(2);
+        const toplamFiyat = (fiyat + secimler);
+        const total = (toplamFiyat * quantity).toFixed(2);
         setToplam(total);
-    }, [form.malzemeler]);
+    }, [form.malzemeler,quantity]);
 
     useEffect(() => {
         const errors = {};
@@ -184,7 +197,14 @@ function OrderPizza() {
                     <p style={{ color: 'red' }}>Toplam: {toplam}₺</p>
                 </div>
                 <div className='form-row'>
-                    <Button type='button'className='buttons'>Ekleme Çıkarma</Button>
+
+                <div class="product-buttons form-row">
+                    <Button type='button'className='buttons' onClick={handleDecrement}>-</Button>
+                    <div>{quantity}</div>
+                    <Button type='button'className='buttons' onClick={handleIncrement}>+</Button>
+                    </div>
+
+                 
                     <Button className='buttons' type='submit' disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
                 </div>
