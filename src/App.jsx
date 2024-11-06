@@ -8,7 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const malzemeList = [
   "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalepeno", "Sarımsak", "Biber", "Ananas", "Kabak"
 ]
-
+const boyutlar = [
+  "Küçük", "Orta", "Büyük"
+]
 
 const initialForm = {
   name: "",
@@ -64,15 +66,7 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!form.name || form.name.length < 3) {
-      setFormErrors("İsim en az 3 karakter olmalı.");
-      return;
-    }
-
-    if (form.malzemeler.length < 4 || form.malzemeler.length > 10) {
-      setFormErrors("En fazla 10 ve en az 4 malzeme seçebilirsiniz.");
-      return;
-    }
+    
 
 
     console.log(form);
@@ -126,38 +120,18 @@ function App() {
             <div>
               <Label>Boyut Seç</Label>
               <div>
-                <Label>
-                  <Input
-                    type="radio"
-                    name="boyut"
-                    value="Kucuk"
-                    onChange={handleChange}
-                    checked={form.boyut === "Kucuk"}
-                  />
-                  Küçük
-                </Label>
-
-                <Label >
-                  <Input
-                    type="radio"
-                    name="boyut"
-                    value="Orta"
-                    onChange={handleChange}
-                    checked={form.boyut === "Orta"}
-                  />
-                  Orta
-                </Label>
-
-                <Label>
-                  <Input
-                    type="radio"
-                    name="boyut"
-                    value="Buyuk"
-                    onChange={handleChange}
-                    checked={form.boyut === "Buyuk"}
-                  />
-                  Büyük
-                </Label>
+                {boyutlar.map((boyut) => (
+                  <Label key={boyut}>
+                    <input
+                      type='radio'
+                      name='boyut'
+                      value={boyut}
+                      onChange={handleChange}
+                      checked={form.boyut === boyut}
+                    />
+                    {boyut}
+                  </Label>
+                ))}
               </div>
             </div>
 
