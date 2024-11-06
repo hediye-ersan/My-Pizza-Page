@@ -28,8 +28,8 @@ function MyForm() {
     useEffect(() => {
         const fiyat = 85.50;
         const secimler = form.malzemeler.length * 5;
-        const total = (fiyat + secimler).toFixed(2);  // Toplam fiyatı hesapla ve formatla
-        setToplam(total);  // Toplamı güncelle
+        const total = (fiyat + secimler).toFixed(2);
+        setToplam(total);
     }, [form.malzemeler]);
 
     useEffect(() => {
