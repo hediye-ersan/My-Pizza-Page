@@ -43,7 +43,7 @@ function App() {
     }
 
     if (form.malzemeler.length < 4) {
-      errors.malzemeler = "En az 4 malzeme seçmelisiniz.";
+      errors.malzemeler = "En az 4 malzeme seçmelisiniz.(5₺)";
     }
 
     if (form.malzemeler.length > 10) {
@@ -78,7 +78,9 @@ function App() {
 
     try {
       const response = await axios.post('https://reqres.in/api/pizza', form);
-      console.log(response.data);
+      console.log("Gelen Yanıt" ,response.data);
+
+      console.log("Sipariş Özeti:", response.data)
 
       alert("Siparişiniz başarıyla alındı!");
       setForm(initialForm);
@@ -90,12 +92,7 @@ function App() {
     }
   };
     
-    
-    
-
   
-
-
   return (
     <>
       <div className='header'>
