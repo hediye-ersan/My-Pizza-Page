@@ -4,6 +4,7 @@ import workintech from '/workintech.svg'
 import './App.css'
 import { Form, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 const malzemeList = [
   "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalepeno", "Sarımsak", "Biber", "Ananas", "Kabak"
@@ -25,7 +26,14 @@ const initialForm = {
 function App() {
   const [form, setForm] = useState(initialForm);
   const [formErrors, setFormErrors] = useState({});
+  const [toplam, setToplam] = useState(0)
 
+  useEffect(() => {
+    const fiyat = 85.50;  
+    const secimler = form.malzemeler.length * 5; 
+    const total = (fiyat + secimler).toFixed(2);  // Toplam fiyatı hesapla ve formatla
+    setToplam(total);  // Toplamı güncelle
+  }, [form.malzemeler]);
 
   useEffect(() => {
     const errors = {};
@@ -63,20 +71,29 @@ function App() {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
+    console.log("Form gönderiliyor:", form);
+
+    try {
+      const response = await axios.post('https://reqres.in/api/pizza', form);
+      console.log(response.data);
+
+      alert("Siparişiniz başarıyla alındı!");
+      setForm(initialForm);
+      setFormErrors({});
+
+    } catch (error) {
+      console.error("Veri gönderme hatası:", error);
+      alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+    }
+  };
+    
+    
     
 
-
-    console.log(form);
-    setForm(initialForm);// Formu sıfırla
-    setFormErrors("")
-  };
-
-  const fiyat = 85.50;
-  const secimler = form.malzemeler.length * 5;
-  const toplam = (fiyat + secimler).toFixed(2); // Toplamı formatla
+  
 
 
   return (
@@ -190,7 +207,7 @@ function App() {
 
           <div>
             <p>Sipariş Toplamı</p>
-            <p>Seçimler: {secimler}₺</p>
+            <p>Seçimler: {(form.malzemeler.length * 5).toFixed(2)}₺</p>
             <p>Toplam: {toplam}₺</p>
           </div>
           <div>
