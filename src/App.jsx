@@ -4,7 +4,7 @@ import workintech from '/workintech.svg'
 import './App.css'
 import { Form, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Router, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { Router, Switch } from 'react-router-dom';
 //Bileşenlerim
 import OrderPizza from './components/OrderPizza';
 
