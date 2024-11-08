@@ -8,6 +8,7 @@ describe('Pizza Siparişi Formu Testi', () => {
             .type('Hediye Ersan')
             .should('have.value', 'Hediye Ersan');
     });
+    
     it('Birden fazla malzeme seçilmeli', () => {
 
         cy.get('[data-cy=input-pepperoni]').check();
@@ -20,6 +21,21 @@ describe('Pizza Siparişi Formu Testi', () => {
         cy.get('[data-cy=input-domates]').should('be.checked');
     });
 
+    it('Form doğru şekilde gönderilmeli', () => {
+        cy.get('[data-cy=input-name]').type('Hediye Ersan'); // Ad-Soyad giriyoruz
+        cy.get('[data-cy=input-size-orta]').check();           // Boyut seçiyoruz
+        cy.get('[data-cy=input-hamur]').select('Orta');         //Hamur kalınlığı
 
-    
+        //En az 4 malzeme şartı
+        cy.get('[data-cy=input-pepperoni]').check();
+        cy.get('[data-cy=input-sosis]').check();
+        cy.get('[data-cy=input-domates]').check();
+        cy.get('[data-cy=input-mısır]').check();
+
+        cy.get('[data-cy="siparis-ver"]').click()
+
+        cy.url().should('include', '/success');
+
+    });
+
 });
