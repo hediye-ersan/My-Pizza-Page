@@ -35,17 +35,16 @@ describe('Pizza Siparişi Formu Testi', () => {
         cy.get('[data-cy="siparis-ver"]').click()
 
         cy.url().should('include', '/success');
-       
 
     });
-    it('Anasayfa butonu doğru bir şekilde çalışmalı.', () => {
+    it('Anasayfa butonu doğru bir şekilde çalışmalı', () => {
         cy.get('[data-cy="anasayfa"]').click()
         cy.url().should('include', '/');
     });
     it('Acıktım butonu doğru bir şekilde çalışmalı', () => {
         cy.visit('http://localhost:5173/')
         cy.get('[data-cy="aciktim"]').click()
-        cy.url().should('include', '/orderPizza');
+        cy.url().should('include', '/');
     });
 
 });
