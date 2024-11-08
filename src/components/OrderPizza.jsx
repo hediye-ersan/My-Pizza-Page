@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const malzemeList = [
     "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalepeno", "Sarımsak", "Biber", "Ananas", "Kabak"
@@ -26,24 +27,26 @@ function OrderPizza() {
     const [toplam, setToplam] = useState(0)
     const [quantity, setQuantity] = useState(1);
 
+    const history = useHistory();
+
     const handleIncrement = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
-      };
-    
-      const handleDecrement = () => {
-        if (quantity > 1) {
-          setQuantity(prevQuantity => prevQuantity - 1);
-        }
-      };
+    };
 
-      
+    const handleDecrement = () => {
+        if (quantity > 1) {
+            setQuantity(prevQuantity => prevQuantity - 1);
+        }
+    };
+
+
     useEffect(() => {
         const fiyat = 85.50;
         const secimler = form.malzemeler.length * 5;
         const toplamFiyat = (fiyat + secimler);
         const total = (toplamFiyat * quantity).toFixed(2);
         setToplam(total);
-    }, [form.malzemeler,quantity]);
+    }, [form.malzemeler, quantity]);
 
     useEffect(() => {
         const errors = {};
@@ -81,24 +84,31 @@ function OrderPizza() {
         }
     };
 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         console.log("Form gönderiliyor:", form);
 
-        try {
-            const response = await axios.post('https://reqres.in/api/pizza', form);
+        axios.post('https://reqres.in/api/pizza')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+                alert("Siparişiniz başarıyla alındı!");
+                setForm(initialForm);
+                setFormErrors({});
+                history.push('/success');
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+                alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+            })
+            .finally(function () {
+                // always executed
+            });
 
-            console.log("Sipariş Özeti:", response.data)
 
-            alert("Siparişiniz başarıyla alındı!");
-            setForm(initialForm);
-            setFormErrors({});
-
-        } catch (error) {
-            console.error("Veri gönderme hatası:", error);
-            alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-        }
     };
 
 
@@ -198,13 +208,13 @@ function OrderPizza() {
                 </div>
                 <div className='form-row'>
 
-                <div class="product-buttons form-row">
-                    <Button type='button'className='buttons' onClick={handleDecrement}>-</Button>
-                    <div>{quantity}</div>
-                    <Button type='button'className='buttons' onClick={handleIncrement}>+</Button>
+                    <div class="product-buttons form-row">
+                        <Button type='button' className='buttons' onClick={handleDecrement}>-</Button>
+                        <div>{quantity}</div>
+                        <Button type='button' className='buttons' onClick={handleIncrement}>+</Button>
                     </div>
 
-                 
+
                     <Button className='buttons' type='submit' disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
                 </div>
