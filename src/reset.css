@@ -16,19 +16,21 @@
 
 
 }
+
 .product-buttons {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 5px;
-   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
 }
+
 .product-buttons .buttons {
     padding: 10px 20px;
-    font-size: 1rem; 
-  
-    
-  }
+    font-size: 1rem;
+
+
+}
 
 h1 {
     text-align: center;
@@ -81,12 +83,9 @@ h1 {
 
 .malzeme-container p {
     grid-column: span 2;
-    /* Uyarı mesajı her iki sütunu kapsayacak şekilde genişlesin */
     color: var(--red);
     font-size: rem;
-    /* Daha küçük yazı tipi */
     margin-top: 0.5rem;
-    /* Başlık ile arasına boşluk */
     min-height: 20px;
 }
 
@@ -119,5 +118,31 @@ label {
     margin: 1.5rem 5rem;
     text-align: center;
     border-radius: 1rem;
+
+}
+
+.succes-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+}
+
+.succes-p {
+    padding: 8rem 0rem;
+    font-size: 2rem;
+    font-family: "Quattrocento", serif;
+    font-weight: 800;
+}
+
+.succes-container {
+    font-size: 4.5rem;
+    text-align: center;
+    font-family: 'Roboto Condensed';
+    padding: 5rem 0rem 20rem;
 
 }
