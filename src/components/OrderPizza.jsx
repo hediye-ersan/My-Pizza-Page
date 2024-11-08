@@ -117,6 +117,26 @@ function OrderPizza() {
         <>
 
             <Form onSubmit={handleSubmit}>
+                <div className='header'>
+                    <h1>Teknolojik Yemekler</h1>
+                    <div className='form gap'>
+                        <h5>Anasayfa</h5>
+                        <h5>Seçenekler</h5>
+                        <h5>Sipariş Oluştur</h5>
+                    </div></div>
+                <div className='form'>
+                    <div>
+                        <h2>
+                            Position Absolute Acı Pizza
+                        </h2>
+                        <div className='form-row'>
+                            <h2>85.50₺</h2>
+                            <p>4.9</p>
+                            <p>(200)</p></div>
+                        <p className='justify'>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
+
+                    </div>
+                
 
                 <div className='form-space'>
                     <Label htmlFor="name">Ad-Soyad</Label>
@@ -223,7 +243,7 @@ function OrderPizza() {
                     <Button className='buttons' type='submit' data-cy="siparis-ver" disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
                 </div>
-
+                </div>
             </Form>
 
         </>
