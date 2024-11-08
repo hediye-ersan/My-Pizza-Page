@@ -126,6 +126,7 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .color-white {
@@ -142,15 +143,17 @@ label {
 }
 
 .succes-container {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 4.5rem;
-    text-align: center;
     font-family: 'Roboto Condensed';
     padding: 5rem 0rem 20rem;
 
 }
+
 .bg-img {
-    background-image: url(/Assets/Iteration-1-assets/home-banner.png);   
-    height: 100vh;
+    background-image: url(/Assets/Iteration-1-assets/home-banner.png);
+    min-height: 100vh;
     background-position: center center;
     background-size: cover;
 
@@ -172,9 +175,48 @@ label {
     font-weight: 900;
 }
 
-.aciktim-button{
+.aciktim-button {
     border-radius: 1rem;
     padding: 0.5rem 2rem;
     font-size: 1.5rem;
-    
+
+}
+
+@media screen and (min-width: 550px) {
+    .header {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .form {
+        min-width: 550px;
+    }
+
+    .bg-img {
+        min-width: 100vw;
+        background-size:cover;
+        
+    }
+    .succes-center{
+        min-width: 100vw;
+        min-height: 100vw;
+    }
+    .succes-container{
+        text-align: center;
+        justify-content: center;
+        
+    }
+    .succes-container div:nth-child(1) {
+        flex: 1 1 100%; 
+    }
+
+    .succes-container div:nth-child(2),
+    .succes-container div:nth-child(3) {
+        padding-left: 2rem;
+        
+
+        
+        
+    }
 }
