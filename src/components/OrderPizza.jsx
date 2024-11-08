@@ -97,7 +97,8 @@ function OrderPizza() {
                 alert("Siparişiniz başarıyla alındı!");
                 setForm(initialForm);
                 setFormErrors({});
-                history.push('/success');
+
+                history.push('/success');//history push
             })
             .catch(function (error) {
                 // handle error
@@ -126,6 +127,7 @@ function OrderPizza() {
                         type="text"
                         onChange={handleChange}
                         value={form.name}
+                        data-cy="input-name"
                     />
                     {formErrors.name && <p style={{ color: 'red' }}>{formErrors.name}</p>}
                 </div>
@@ -142,6 +144,7 @@ function OrderPizza() {
                                         value={boyut}
                                         onChange={handleChange}
                                         checked={form.boyut === boyut}
+                                        data-cy={`input-size-${boyut.toLowerCase()}`}
                                     />
                                     {boyut}
                                 </Label>
@@ -157,6 +160,7 @@ function OrderPizza() {
                             id="hamur"
                             value={form.hamurKalinligi}
                             onChange={handleChange}
+                            data-cy="input-hamur"
                         >
                             <option value="-1" disabled>Hamur Kalınlığı</option>
                             <option value="Ince">İnce</option>
@@ -178,6 +182,7 @@ function OrderPizza() {
                                     name="malzemeler"
                                     value={malzeme}
                                     onChange={handleChange}
+                                    data-cy={`input-${malzeme.toLowerCase()}`}
                                     checked={form.malzemeler.includes(malzeme)}
                                     disabled={form.malzemeler.length >= 10 && !form.malzemeler.includes(malzeme)}
 
@@ -215,7 +220,7 @@ function OrderPizza() {
                     </div>
 
 
-                    <Button className='buttons' type='submit' disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
+                    <Button className='buttons' type='submit' data-cy="siparis-ver" disabled={form.name.length < 3 || !form.boyut || form.malzemeler.length < 4 || form.malzemeler.length > 10}>Sipariş Ver</Button>
 
                 </div>
 

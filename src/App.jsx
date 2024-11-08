@@ -16,24 +16,12 @@ import Home from './components/Home';
 function App() {
 
   return (
-    <>
-      <Router>
-        <Switch>
 
-          <Route path="/orderPizza" />
-          <OrderPizza />
-          <Route path="/Home" />
-          <Home />
-          <Route path="/success" />
-          <Success />
-
-        </Switch>
-      </Router>
-      
+    <Router>
       <div className='header'>
         <h1>Teknolojik Yemekler</h1>
         <div className='form gap'>
-          <h5><Link to="/Home">Anasayfa</Link></h5>
+          <h5>Anasayfa</h5>
           <h5>Seçenekler</h5>
           <h5>Sipariş Oluştur</h5>
         </div></div>
@@ -49,9 +37,18 @@ function App() {
           <p className='justify'>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
 
         </div>
+        <Switch>
 
+          <Route exact path="/OrderPizza" />
+          <OrderPizza />
+          <Route path="/Home" />
+          <Home />
+          <Route path="/Success" />
+          <Success />
+
+        </Switch>
       </div>
-    </>
+    </Router>
   )
 }
 
