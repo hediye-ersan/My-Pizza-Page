@@ -15,7 +15,7 @@ function Home() {
             <div>PİZZA,</div>
             <div>DOYURUR</div>
             <Link to ="/orderPizza">
-        <Button className='buttons aciktim-button'>ACIKTIM!</Button>
+        <Button className='buttons aciktim-button' data-cy='aciktim'>ACIKTIM!</Button>
         </Link>
         </div>
         
