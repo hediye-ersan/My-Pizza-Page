@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Label, Input, Button } from 'reactstrap';
+import { Form, Label, Input, Button} 
+from 'reactstrap';
+import { Link } from 'react-router-dom'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -120,7 +122,8 @@ function OrderPizza() {
                 <div className='header'>
                     <h1>Teknolojik Yemekler</h1>
                     <div className='form gap'>
-                        <h5>Anasayfa</h5>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className= "h5">Anasayfa</Link>
+                    
                         <h5>Seçenekler</h5>
                         <h5>Sipariş Oluştur</h5>
                     </div></div>
