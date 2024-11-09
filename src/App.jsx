@@ -21,9 +21,13 @@ function App() {
       
       
         <Switch>
-        <Route path="/" exact component={Home} />
-          <Route path="/orderPizza" component={OrderPizza} />
-          <Route path="/success" component={Success} />
+        <Route exact path="/">
+        <Home/></Route>
+          <Route path="/orderPizza">
+          <OrderPizza/></Route>
+          <Route path="/success">
+          <Success/>
+          </Route>
         </Switch>
       
     </Router>
