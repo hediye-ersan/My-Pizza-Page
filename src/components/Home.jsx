@@ -70,7 +70,9 @@ function Home() {
                         Burger Menü<br />
                     </p>
 
-                    <Button className='btn-siparis' >SİPARİŞ VER</Button>
+                    <Link to='orderPizza'>
+                        <Button className='btn-siparis' >SİPARİŞ VER</Button>
+                    </Link>
 
                 </div>
 
@@ -80,8 +82,9 @@ function Home() {
                         npm gibi kurye<br />
                     </p>
 
-
-                    <Button className='btn-siparis' >SİPARİŞ VER</Button>
+                    <Link to='orderPizza'>
+                        <Button className='btn-siparis' >SİPARİŞ VER</Button>
+                    </Link>
 
                 </div>
             </main>
@@ -183,12 +186,12 @@ function Home() {
                         Hot Menu
                     </h3>
                     <div className='iletisim'>
-                    <p>Terminal Pizza</p>
-                    <p>5 Kişilik Hackathlon Pizza</p>
-                    <p>useEffect Tavuklu Pizza</p>
-                    <p>Beyaz  Console Frosty</p>
-                    <p>Testler Geçti Mutlu Burger</p>
-                    <p>Position Absolute Acı Burger</p>
+                        <p>Terminal Pizza</p>
+                        <p>5 Kişilik Hackathlon Pizza</p>
+                        <p>useEffect Tavuklu Pizza</p>
+                        <p>Beyaz  Console Frosty</p>
+                        <p>Testler Geçti Mutlu Burger</p>
+                        <p>Position Absolute Acı Burger</p>
                     </div>
                 </div>
 
@@ -197,12 +200,12 @@ function Home() {
                         Instagram
                     </h3>
                     <div className='insta-img'>
-                    <img src='/insta/li-0.png'/>
-                    <img src='/insta/li-1.png'/>
-                    <img src='/insta/li-2.png'/>
-                    <img src='/insta/li-3.png'/>
-                    <img src='/insta/li-4.png'/>
-                    <img src='/insta/li-5.png'/>
+                        <img src='/insta/li-0.png' />
+                        <img src='/insta/li-1.png' />
+                        <img src='/insta/li-2.png' />
+                        <img src='/insta/li-3.png' />
+                        <img src='/insta/li-4.png' />
+                        <img src='/insta/li-5.png' />
                     </div>
                 </div>
 
