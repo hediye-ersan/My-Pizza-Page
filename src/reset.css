@@ -10,6 +10,10 @@
     --beige: #FAF7F2;
 }
 
+.white{
+    color: white;
+}
+
 .header {
     background-color: var(--red);
     color: white;
@@ -98,7 +102,7 @@ label {
 
 .barlow {
     font-family: "Barlow", serif;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -127,6 +131,7 @@ label {
     justify-content: center;
     align-items: center;
     
+
 }
 
 .color-white {
@@ -145,9 +150,11 @@ label {
 .succes-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     font-size: 4.5rem;
     font-family: 'Roboto Condensed';
     padding: 5rem 0rem 20rem;
+    
 
 }
 
@@ -182,6 +189,121 @@ label {
 
 }
 
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    gap: 2rem;
+    
+
+}
+
+.item {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+
+.bg-lezzetus {
+    background-image: url('/Assets/Iteration-2-aseets/cta/kart-1.png');
+    border-radius: 1rem;
+    background-size: cover;
+    width: auto;
+
+}
+
+.lezzetus {
+    font-size: 4rem;
+    color: white;
+    font-family: 'Quattrocento';
+
+}
+
+.padding-card {
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+
+}
+
+.btn-siparis {
+    background-color: white;
+    color: var(--red);
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    font-family: 'Barlow';
+    margin-top: 1rem;
+
+}
+.beige{
+    background-color: var(--beige);
+}
+.bg-burger {
+    background-image: url('/Assets/Iteration-2-aseets/cta/kart-2.png');
+    border-radius: 1rem;
+    padding: 3rem;
+    margin-top: 1rem;
+    background-size: 100% 100%;
+}
+.npm-p{
+    font-size: 2rem;
+    font-family: 'Satisfy';
+    color: var(--red);
+    text-align: center;
+}
+.npm-p2{
+    font-family: 'Barlow';
+    font-size: 3rem;
+    text-align: center;
+    
+}
+
+.bg-npm {
+    background-image: url('/Assets/Iteration-2-aseets/cta/kart-3.png');
+    border-radius: 1rem;
+    padding: 3rem;
+    margin-top: 1rem;
+    background-size: 100% 100%;
+}
+.item-border{
+    border: 1px solid white;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+    border-radius: 2rem;
+    justify-content: center;
+    
+    
+}
+.justify-center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto 5rem;
+    row-gap: 1rem;
+}
+.pizza-bg{
+    background-color: white;
+    padding: 3rem 3rem 0rem;
+    border-radius: 1rem;
+}
+.pizza-detay{
+    display: flex;
+    justify-content: space-between;
+}
+.pizza-p{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+/*
 @media screen and (min-width: 550px) {
     .header {
         margin: 0;
@@ -204,7 +326,7 @@ label {
     }
     .succes-container{
         text-align: center;
-        justify-content: center;
+        
         
     }
     .succes-container div:nth-child(1) {
@@ -219,4 +341,4 @@ label {
         
         
     }
-}
+}*/
