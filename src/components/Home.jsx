@@ -158,6 +158,55 @@ function Home() {
                     </div>
                 </div>
             </section>
+            <footer className='form'>
+                <h2 style={{ fontFamily: 'Londrina Solid' }}>
+                    Teknolojik Yemekler
+                </h2>
+                <div className='iletisim'>
+                    <div className='flex'>
+                        <img src='/pictures/icons/icon-1.png' />
+                        <p>341 Londonderry Road,
+                            Istanbul Türkiye</p>
+                    </div>
+                    <div className='flex'>
+                        <img src='/pictures/icons/icon-2.png' />
+                        <p>aciktim@teknolojikyemekler.com</p>
+                    </div>
+                    <div className='flex'>
+                        <img src='/pictures/icons/icon-3.png' />
+                        <p>+90 216 123 45 67</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>
+                        Hot Menu
+                    </h3>
+                    <div className='iletisim'>
+                    <p>Terminal Pizza</p>
+                    <p>5 Kişilik Hackathlon Pizza</p>
+                    <p>useEffect Tavuklu Pizza</p>
+                    <p>Beyaz  Console Frosty</p>
+                    <p>Testler Geçti Mutlu Burger</p>
+                    <p>Position Absolute Acı Burger</p>
+                    </div>
+                </div>
+
+                <div className='insta'>
+                    <h3>
+                        Instagram
+                    </h3>
+                    <div className='insta-img'>
+                    <img src='/insta/li-0.png'/>
+                    <img src='/insta/li-1.png'/>
+                    <img src='/insta/li-2.png'/>
+                    <img src='/insta/li-3.png'/>
+                    <img src='/insta/li-4.png'/>
+                    <img src='/insta/li-5.png'/>
+                    </div>
+                </div>
+
+            </footer>
 
         </div>
     );
