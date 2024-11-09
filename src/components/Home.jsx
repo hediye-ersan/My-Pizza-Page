@@ -49,7 +49,7 @@ function Home() {
                     <h4>Gazlı içecek</h4></div>
             </nav>
 
-            <main className='form beige'>
+            <main className='beige'>
                 <div className='bg-lezzetus padding-card'>
                     <p className='lezzetus'>
                         Özel <br />
@@ -63,7 +63,7 @@ function Home() {
                     </Link>
                 </div>
 
-
+                <div>
                 <div className='bg-burger padding-card'>
                     <p className='lezzetus' style={{ fontSize: '2rem', fontFamily: 'Barlow' }}>
                         Hackathlon<br />
@@ -87,10 +87,11 @@ function Home() {
                     </Link>
 
                 </div>
+                </div>
             </main>
 
             <section className='form beige'>
-                <div style={{ paddingTop: '3rem' }}>
+                <div style={{ paddingTop: '3rem' }} className='text form'>
                     <p className='npm-p'>en çok paketlenen menüler</p>
                     <p className='npm-p2'>
                         Acıktıran <br />
@@ -104,7 +105,7 @@ function Home() {
                         <img src='/icons/1.svg' />
                         <h4>YENİ! Kore</h4></div>
 
-                    <div className="item item-border">
+                    <div className="item item-border white" style={{backgroundColor:'#292929'}}>
                         <img src='/icons/2.svg' />
                         <h4>Pizza</h4></div>
 
@@ -124,7 +125,7 @@ function Home() {
                         <img src='/icons/6.svg' />
                         <h4>Gazlı içecek</h4></div>
                 </nav>
-                <div className='pizzalar justify-center'>
+                <div className='justify-center'>
                     <div className='pizza-bg'>
                         <img src='/pictures/food-1.png' />
                         <p className='barlow pizza-p
@@ -162,10 +163,11 @@ function Home() {
                 </div>
             </section>
             <footer className='form'>
+                
+                <div className='iletisim'>
                 <h2 style={{ fontFamily: 'Londrina Solid' }}>
                     Teknolojik Yemekler
                 </h2>
-                <div className='iletisim'>
                     <div className='flex'>
                         <img src='/pictures/icons/icon-1.png' />
                         <p>341 Londonderry Road,
@@ -181,7 +183,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div>
+                <div className='hot-menu'>
                     <h3>
                         Hot Menu
                     </h3>
@@ -195,11 +197,13 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='insta'>
-                    <h3>
+                <div className='insta hot-menu'>
+                    
+                    <div 
+                    className='insta-img'>
+                        <h3>
                         Instagram
                     </h3>
-                    <div className='insta-img'>
                         <img src='/insta/li-0.png' />
                         <img src='/insta/li-1.png' />
                         <img src='/insta/li-2.png' />
