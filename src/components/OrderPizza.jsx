@@ -123,7 +123,7 @@ function OrderPizza() {
                 </div>
                 <div className='form'>
                     <div className='secimler beige'>
-                        <img className='img-center'src='/pictures/form-banner.png'/>
+                        <img className='img-center terminal-pizza'src='/pictures/form-banner.png'/>
                         <div className='form gap'>
                             <Link to="/" style={{ textDecoration: 'none' }} className="h5" data-cy='anasayfa'>Anasayfa</Link>
 

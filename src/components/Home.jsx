@@ -127,7 +127,7 @@ function Home() {
                 </nav>
                 <div className='justify-center'>
                     <div className='pizza-bg'>
-                        <img src='/pictures/food-1.png' />
+                        <img className='terminal-pizza' src='/pictures/food-1.png' />
                         <p className='barlow pizza-p
                         '>Terminal Pizza
                         </p>
@@ -139,7 +139,7 @@ function Home() {
                     </div>
 
                     <div className='pizza-bg'>
-                        <img src='/pictures/food-2.png' />
+                        <img  className='terminal-pizza' src='/pictures/food-2.png' />
                         <p className='barlow pizza-p
                         '>Position Absolute Acı Pizza
                         </p>
@@ -150,7 +150,7 @@ function Home() {
                         </div>
                     </div>
                     <div className='pizza-bg'>
-                        <img src='/pictures/food-3.png' />
+                        <img  className='terminal-pizza' src='/pictures/food-3.png' />
                         <p className='barlow pizza-p
                         '>useeffect Tavuklu Burger
                         </p>
