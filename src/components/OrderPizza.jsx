@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Label, Input, Button }
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Form, Label, Input, Button, Toast }
     from 'reactstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -96,16 +98,45 @@ function OrderPizza() {
             .then(function (response) {
                 // handle success
                 console.log(response);
-                alert("Siparişiniz başarıyla alındı!");
+                toast.success('Siparişiniz başarıyla alındı!', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
                 setForm(initialForm);
                 setFormErrors({});
 
-                history.push('/success');//history push
+                setTimeout(() => {
+                    history.push({
+                        pathname: "/success",
+                        state: {
+                            boyut: form.boyut,
+                            hamurKalinligi: form.hamurKalinligi,
+                            malzemeler: form.malzemeler,
+                            siparisNotu: form.siparisNotu,
+                            seçimler: form.malzemeler.length,
+                            toplam: toplam,
+
+                        }
+                    });
+                }, 2000);
             })
             .catch(function (error) {
                 // handle error
                 console.log(error);
-                alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+                toast.error("Bir hata oluştu. Lütfen tekrar deneyin.", {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 2000,
+                    hideProgressBar: true,
+                    closeButton: false,
+                    draggable: false,
+                    pauseOnHover: true
+                });
             })
             .finally(function () {
                 // always executed
@@ -198,8 +229,8 @@ function OrderPizza() {
                         {formErrors.malzemeler && (
                             <p>{formErrors.malzemeler}</p>)}
                         {malzemeList.map((malzeme) => (
-                            <div key={malzeme} >
-                                <Label check style={{ margin: '0.5rem 0rem' }}>
+                            <div key={malzeme}>
+                                <Label check style={{ margin: '0.5rem 0', position: 'relative'  }}>
                                     <Input 
                                         id='malzemeler'
                                         type="checkbox"
@@ -250,7 +281,7 @@ function OrderPizza() {
                     </div>
                 </div>
             </Form>
-
+            
         </>
     )
 }
