@@ -2,7 +2,11 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx,css}", ],
   theme: {
-    extend: {},
+    extend: {fontFamily: {
+      roboto: ['Roboto', 'sans-serif'],
+      barlow: ['Barlow', 'sans-serif'],
+      satisfy: ['Satisfy', 'cursive'],
+    },},
   },
   plugins: [],
 }
