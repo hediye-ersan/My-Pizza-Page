@@ -7,14 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import OrderPizza from './components/OrderPizza';
 import Success from './components/Success';
 import Home from './components/Home';
+import { ToastContainer} from 'react-toastify';  // toast ve ToastContainer'ı import ettik
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function App() {
 
   return (
-
+    
     <Router>
+      <ToastContainer />
       <Switch>
         <Route exact path="/">
           <Home /></Route>
@@ -25,6 +28,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+  
   )
 }
 
