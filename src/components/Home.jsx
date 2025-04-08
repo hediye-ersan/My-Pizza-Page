@@ -99,7 +99,7 @@ function Home() {
                         Lezzetler <br />
                     </p>
                 </div>
-                <nav className='form items' >
+                <nav className='form items2 items' >
 
                     <div className="item item-border" >
                         <img src='/icons/1.svg' />
@@ -141,7 +141,7 @@ function Home() {
                     <div className='pizza-bg'>
                         <img className='terminal-pizza' src='/pictures/food-2.png' />
                         <p className='barlow pizza-p
-                        '>Position Absolute Acı Pizza
+                        '>Absolute Acı Pizza
                         </p>
                         <div className='pizza-detay'>
                             <p>4.9</p>
@@ -152,7 +152,7 @@ function Home() {
                     <div className='pizza-bg'>
                         <img className='terminal-pizza' src='/pictures/food-3.png' />
                         <p className='barlow pizza-p
-                        '>useeffect Tavuklu Burger
+                        '>useEffect Tavuklu Pizza
                         </p>
                         <div className='pizza-detay'>
                             <p>4.9</p>
@@ -168,16 +168,16 @@ function Home() {
                     <h2 style={{ fontFamily: 'Londrina Solid' }}>
                         Teknolojik Yemekler
                     </h2>
-                    <div className='flex'>
+                    <div className='flex gap-2'>
                         <img src='/pictures/icons/icon-1.png' />
                         <p>341 Londonderry Road,
                             Istanbul Türkiye</p>
                     </div>
-                    <div className='flex'>
+                    <div className='flex gap-2'>
                         <img src='/pictures/icons/icon-2.png' />
                         <p>aciktim@teknolojikyemekler.com</p>
                     </div>
-                    <div className='flex'>
+                    <div className='flex gap-2'>
                         <img src='/pictures/icons/icon-3.png' />
                         <p>+90 216 123 45 67</p>
                     </div>
