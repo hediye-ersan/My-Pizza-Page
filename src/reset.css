@@ -439,11 +439,11 @@ input[type="checkbox"]:checked::after {
         display: flex;
         flex-wrap: nowrap;
         gap: 10rem;
+        width: 100%;
     }
     .items2 {
         display: flex;
         flex-wrap: nowrap;
-      
         padding: 4rem 1rem;
         gap: 4rem;
     }
