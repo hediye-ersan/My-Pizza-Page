@@ -327,18 +327,24 @@ footer {
 
 .insta {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-wrap: wrap;  /* Elemanları sarmalayacak */
+    gap: 1rem;       /* Resimler arasında boşluk */
+    justify-content: center; /* Elemanları ortalar */
+}
+
+.insta-img {
+    display: grid;             /* Grid sistemi ile 3 sütun yapalım */
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun yapalım */
+    gap: 1rem;                 /* Resimler arasındaki boşluk */
+    width: 100%;               /* Genişliği %100 yapalım */
 }
 
 .insta img {
-    width: 30%;
-    column-gap: 2rem;
-    row-gap: 2rem;
-    padding-right: 0.5rem;
-    padding-bottom: 0.5rem;
-
+    width: 100%;              /* Resimlerin genişliği 100% */
+    height: auto;             /* Resimlerin boyutlarını koruyalım */
+    border-radius: 8px;       /* Resimlere yuvarlak köşe ekleyebiliriz */
 }
+
 
 input[type="checkbox"] {
     width: 40px;
@@ -380,7 +386,7 @@ input[type="checkbox"]:checked::after {
 }
 
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 500px) {
     .header {
         margin: 0;
         padding: 0;

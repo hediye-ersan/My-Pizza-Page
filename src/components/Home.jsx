@@ -64,29 +64,29 @@ function Home() {
                 </div>
 
                 <div>
-                <div className='bg-burger padding-card'>
-                    <p className='lezzetus' style={{ fontSize: '2rem', fontFamily: 'Barlow' }}>
-                        Hackathlon<br />
-                        Burger Menü<br />
-                    </p>
+                    <div className='bg-burger padding-card'>
+                        <p className='lezzetus' style={{ fontSize: '2rem', fontFamily: 'Barlow' }}>
+                            Hackathlon<br />
+                            Burger Menü<br />
+                        </p>
 
-                    <Link to='orderPizza'>
-                        <Button className='btn-siparis' >SİPARİŞ VER</Button>
-                    </Link>
+                        <Link to='orderPizza'>
+                            <Button className='btn-siparis' >SİPARİŞ VER</Button>
+                        </Link>
 
-                </div>
+                    </div>
 
-                <div className='bg-npm'>
-                    <p className='lezzetus' style={{ fontSize: '2rem', fontFamily: 'Barlow', color: 'black' }}>
-                        <span style={{ color: '#CE2829;' }}>Çoooook</span> hızlı<br />
-                        npm gibi kurye<br />
-                    </p>
+                    <div className='bg-npm'>
+                        <p className='lezzetus' style={{ fontSize: '2rem', fontFamily: 'Barlow', color: 'black' }}>
+                            <span style={{ color: '#CE2829;' }}>Çoooook</span> hızlı<br />
+                            npm gibi kurye<br />
+                        </p>
 
-                    <Link to='orderPizza'>
-                        <Button className='btn-siparis' >SİPARİŞ VER</Button>
-                    </Link>
+                        <Link to='orderPizza'>
+                            <Button className='btn-siparis' >SİPARİŞ VER</Button>
+                        </Link>
 
-                </div>
+                    </div>
                 </div>
             </main>
 
@@ -105,7 +105,7 @@ function Home() {
                         <img src='/icons/1.svg' />
                         <h4>YENİ! Kore</h4></div>
 
-                    <div className="item item-border white" style={{backgroundColor:'#292929'}}>
+                    <div className="item item-border white" style={{ backgroundColor: '#292929' }}>
                         <img src='/icons/2.svg' />
                         <h4>Pizza</h4></div>
 
@@ -139,7 +139,7 @@ function Home() {
                     </div>
 
                     <div className='pizza-bg'>
-                        <img  className='terminal-pizza' src='/pictures/food-2.png' />
+                        <img className='terminal-pizza' src='/pictures/food-2.png' />
                         <p className='barlow pizza-p
                         '>Position Absolute Acı Pizza
                         </p>
@@ -150,7 +150,7 @@ function Home() {
                         </div>
                     </div>
                     <div className='pizza-bg'>
-                        <img  className='terminal-pizza' src='/pictures/food-3.png' />
+                        <img className='terminal-pizza' src='/pictures/food-3.png' />
                         <p className='barlow pizza-p
                         '>useeffect Tavuklu Burger
                         </p>
@@ -163,11 +163,11 @@ function Home() {
                 </div>
             </section>
             <footer className='form'>
-                
+
                 <div className='iletisim'>
-                <h2 style={{ fontFamily: 'Londrina Solid' }}>
-                    Teknolojik Yemekler
-                </h2>
+                    <h2 style={{ fontFamily: 'Londrina Solid' }}>
+                        Teknolojik Yemekler
+                    </h2>
                     <div className='flex'>
                         <img src='/pictures/icons/icon-1.png' />
                         <p>341 Londonderry Road,
@@ -198,12 +198,9 @@ function Home() {
                 </div>
 
                 <div className='insta hot-menu'>
-                    
-                    <div 
-                    className='insta-img'>
-                        <h3>
-                        Instagram
-                    </h3>
+                <h3>Instagram</h3>
+                    <div className='insta-img'>
+                        
                         <img src='/insta/li-0.png' />
                         <img src='/insta/li-1.png' />
                         <img src='/insta/li-2.png' />
@@ -212,6 +209,7 @@ function Home() {
                         <img src='/insta/li-5.png' />
                     </div>
                 </div>
+
 
             </footer>
 
